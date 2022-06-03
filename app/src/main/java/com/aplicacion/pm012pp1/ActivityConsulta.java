@@ -63,6 +63,12 @@ public class ActivityConsulta extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Consultado con exito !!",Toast.LENGTH_LONG).show();
     }
 
+    private void Eliminar()
+    {
+
+
+    }
+
     private void init()
     {
         conexion = new SQLiteConexion(this, Transacciones.NameDataBase, null, 1);
