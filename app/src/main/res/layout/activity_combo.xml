@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityCombo"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background">
+
+
+    <Spinner
+        android:id="@+id/comboPersona"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"/>
+
+    <EditText
+        android:id="@+id/txtaconnombres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombres"
+        android:textSize="22dp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/txtaconapellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Apellidos"
+        android:textSize="22dp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/txtaconedad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textSize="22dp" />
+
+    <EditText
+        android:id="@+id/txtaconemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Correo"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textSize="22dp" />
+
+</LinearLayout>
