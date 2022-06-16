@@ -62,7 +62,8 @@ public class ActivityPhoto extends AppCompatActivity
         }
         else
         {
-            TomarFotografia();
+            //TomarFotografia();
+            dispatchTakePictureIntent();
         }
     }
 
@@ -80,7 +81,8 @@ public class ActivityPhoto extends AppCompatActivity
         {
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
             {
-                TomarFotografia();
+                //TomarFotografia();
+                dispatchTakePictureIntent();
             }
             else
             {
@@ -96,9 +98,15 @@ public class ActivityPhoto extends AppCompatActivity
 
         if(requestCode == REQUESTTAKEPHOTO && resultCode == RESULT_OK)
         {
+            /*
             Bundle extraerfoto = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extraerfoto.get("data");
             ObjectImage.setImageBitmap(imageBitmap);
+             */
+
+            File foto = new File(currentPhotoPath);
+            ObjectImage.setImageURI(Uri.fromFile(foto));
+            galleryAddPic();
         }
     }
 
@@ -141,6 +149,14 @@ public class ActivityPhoto extends AppCompatActivity
                 startActivityForResult(takePictureIntent, REQUESTTAKEPHOTO);
             }
         }
+    }
+
+    private void galleryAddPic() {
+        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        File f = new File(currentPhotoPath);
+        Uri contentUri = Uri.fromFile(f);
+        mediaScanIntent.setData(contentUri);
+        this.sendBroadcast(mediaScanIntent);
     }
 
 }
